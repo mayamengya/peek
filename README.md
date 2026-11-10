@@ -6,8 +6,6 @@ A customer calls about a leak. Peek answers, texts them on WhatsApp to send a ph
 
 No app to download and no forms. The customer just calls and sends a photo.
 
-![Dialing Peek](screenshots/phone-01.png)
-
 ## Why WhatsApp and Spanish?
 
 - **Trades already run on WhatsApp, not software.** In the US, **54% of Hispanic adults use WhatsApp, compared with 20% of white adults** ([Pew Research Center, 2023](https://www.pewresearch.org/internet/fact-sheet/social-media/)). Jobs get quoted, scheduled and coordinated through informal chats and calls rather than booking systems. Peek works inside the tools crews already use.
