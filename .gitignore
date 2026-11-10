@@ -1,0 +1,11 @@
+node_modules/
+.env
+.DS_Store
+scripts/assistant-backup-*.json
+vapi-tools.ready.json
+
+# Originals (show a personal phone number) and a third-party photo
+/dashboard-01.png
+/dashboard-02.png
+/phone-01.PNG
+/leaky-pipe.jpg

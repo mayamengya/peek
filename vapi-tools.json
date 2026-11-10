@@ -1,0 +1,44 @@
+[
+  {
+    "type": "function",
+    "async": false,
+    "function": {
+      "name": "request_photo",
+      "description": "Send the caller a WhatsApp message asking for a photo of their plumbing problem. Call this early in the call, as soon as the caller describes an issue. After calling it, keep the conversation going; a system message with the photo diagnosis and price range will arrive automatically when the photo comes in.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "server": {
+      "url": "https://YOUR-NGROK-URL/vapi/tools",
+      "timeoutSeconds": 20
+    },
+    "messages": [
+      { "type": "request-start", "content": "Sending you a WhatsApp now." }
+    ]
+  },
+  {
+    "type": "function",
+    "async": false,
+    "function": {
+      "name": "book_appointment",
+      "description": "Book a plumber visit once the caller agrees. Collect their name, full address, and preferred time first. This also notifies the plumber.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "Caller's full name" },
+          "address": { "type": "string", "description": "Full service address including city" },
+          "time": { "type": "string", "description": "Requested appointment date and time, e.g. 'Tomorrow 10am' or '2026-11-10 14:00'" },
+          "issue": { "type": "string", "description": "Short description of the plumbing problem" }
+        },
+        "required": ["name", "address", "time", "issue"]
+      }
+    },
+    "server": {
+      "url": "https://YOUR-NGROK-URL/vapi/tools",
+      "timeoutSeconds": 20
+    }
+  }
+]
