@@ -105,6 +105,8 @@ const toolDefs = [
     name: "Peek",
     firstMessage: "Hi, thanks for calling. This is Peek. What's going on with your plumbing today?",
     model,
+    transcriber: { provider: "deepgram", model: "nova-3", language: "en" },
+    silenceTimeoutSeconds: 180,
     server: { url: TOOLS_URL },
     serverMessages: ["tool-calls", "status-update", "end-of-call-report"],
     monitorPlan: { ...(before.monitorPlan || {}), controlEnabled: true },

@@ -16,7 +16,7 @@ No app to download and no forms. The customer just calls and sends a photo.
 
 ## How it works
 
-1. **Call:** the customer calls Peek's number ([Vapi](https://vapi.ai) voice agent).
+1. **Call:** the customer calls Peek's number ([Vapi](https://vapi.ai) voice agent, with [Deepgram](https://deepgram.com) Nova-3 speech-to-text).
 2. **Photo:** Peek sends them a WhatsApp message ([Twilio](https://twilio.com)) with a link to upload a photo.
 3. **Diagnosis:** Claude vision looks at the photo and returns a short diagnosis and a price range.
 4. **Spoken on the call:** the diagnosis is added to the live conversation (Vapi Live Call Control), so the agent says it right away.
@@ -39,6 +39,6 @@ ngrok http 3000        # then set PUBLIC_URL in .env to the ngrok URL and restar
 node scripts/setup-vapi.js <assistantId> <ngrok-url>   # creates the Vapi tools and configures the assistant
 ```
 
-**Stack:** Node.js + Express, Vapi (voice), Twilio WhatsApp, Claude (vision + Spanish summary). Everything is kept in memory; there's no database.
+**Stack:** Node.js + Express, Vapi (voice agent), Deepgram (speech-to-text), Twilio WhatsApp, Claude (vision + Spanish summary). Everything is kept in memory; there's no database.
 
 **Hackathon caveats:** Twilio trial accounts need approved WhatsApp templates for business-initiated messages, so the dashboard upload is the reliable demo path. Prices are AI estimates, not quotes.
